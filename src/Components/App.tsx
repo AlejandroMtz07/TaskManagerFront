@@ -10,7 +10,16 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<><Presentation/><Navbar/><Description/><Benefits/></>}/>
+        <Route path="/" 
+          element={
+            <>
+              <Presentation title="Task Manager App"/>
+              <Navbar/>
+              <Description/>
+              <Benefits/>
+            </>
+          }
+        />
         <Route path="login" element={<Login/>}/>
       </Routes>
     </BrowserRouter>

@@ -1,10 +1,15 @@
 import style from './Presentation.module.css'
 
-export const Presentation = () => {
+
+interface PresentationProps {
+  title :string
+}
+
+export const Presentation = ({title}:PresentationProps) => {
   return (
     <div className={style.header}>  
       <header>
-        Task Manager App
+        {title}
       </header>
     </div>
   )
