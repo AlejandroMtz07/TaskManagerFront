@@ -1,0 +1,21 @@
+.navbar{
+    background-color: darkgray;
+    position: sticky;
+    top: 0;
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+}
+.navbar a{
+    width: 33%;
+    text-decoration: none;
+    color: black;
+    background-color: darkgray;
+    padding: 30px;
+    transition: 1s;
+    font-family: 'Courier New', Courier, monospace;
+}
+a:hover{
+    background-color: black;
+    color: white;
+}

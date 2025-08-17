@@ -1,0 +1,32 @@
+.descriptioncontainer{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(231, 229, 229);
+    width: 100%;
+    height: 500px;
+}
+.textdescription{
+    background-color: transparent;
+    width: 50%;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 15%;
+}
+.imagedescription{
+    width: 50%;
+    background-color: darkgray;
+    text-align: center;
+}
+.imagedescription img{
+    background-color: transparent;
+    margin-top: 15%;
+    height: 50%;
+    width: 50%;
+    transition: 1s;
+}
+.imagedescription img:hover{
+    margin-top: 10%;
+    height: 60%;
+    width: 60%;
+}
