@@ -1,16 +1,18 @@
 import Benefits from "./BenefitsComponent/Benefits";
 import Description from "./DescriptionComponent/Description";
+import Login from "./LoginComponent/Login";
 import Navbar from "./NavbarComponent/Navbar";
 import { Presentation } from "./PresentationComponent/Presentation";
+import { BrowserRouter,Route,Routes } from "react-router-dom";
 
 
 export default function App() {
   return (
-    <div>
-      <Presentation/>
-      <Navbar/>
-      <Description/>
-      <Benefits/>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<><Presentation/><Navbar/><Description/><Benefits/></>}/>
+        <Route path="login" element={<Login/>}/>
+      </Routes>
+    </BrowserRouter>
   )
 }
