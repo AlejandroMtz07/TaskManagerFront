@@ -3,13 +3,14 @@ import { Presentation } from "../PresentationComponent/Presentation";
 import { useState, type ChangeEvent, type FormEvent } from 'react';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
-import { data } from 'react-router-dom';
+
 
 export default function Login() {
 
   interface ApiError{
     msg: string;
   }
+
 
   //Gettting the form values
   const [email, setEmail] = useState('');
@@ -26,17 +27,16 @@ export default function Login() {
       {withCredentials : true}
     )
     .then((response) => {
-      toast(response.data.msg)
+      toast.info(response.data.msg)
     })
     .catch((error)=>{
-      //TODO validate the error array send by the backend
       if(Array.isArray(error.response.data)){
         const errors:ApiError[] = error.response.data;
         errors.forEach((element)=>{
-          toast(element.msg)
+          toast.warning(element.msg)
         })
       }else{
-        toast(error.response.data.msg);
+        toast.warning(error.response.data.msg);
       }
     })
   }
@@ -44,7 +44,7 @@ export default function Login() {
   return (
     <div className={style.logincontainer}>
       <Presentation title="Login" />
-      <ToastContainer theme='dark' hideProgressBar={false}/>
+      <ToastContainer hideProgressBar={false}/>
       <div className={style.formcontainer}>
         <form className={style.loginform} onSubmit={submitForm}>
           <label htmlFor="name">

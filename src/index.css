@@ -6,3 +6,6 @@
     display: flex;
     justify-content: left;
 }
+.toast-warning{
+    background-color: white;
+}
