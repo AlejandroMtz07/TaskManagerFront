@@ -1,0 +1,43 @@
+.registercontainer{
+    display: flex;
+    flex-direction: column;
+}
+.formcontainer{
+    background-color: white;
+    border-radius: 10px;
+    padding: 5%;
+    height: 50%;
+    width: 50%;
+    margin-left: 20%;
+}
+.registerform{
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.registerform label{
+    text-transform: uppercase;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+    background-color: transparent;
+    padding: 20px;
+}
+.registerform input{
+    text-align: center;
+    border-color: transparent black black black;
+    background-color: lightgray;
+    padding: 10px;
+}
+.registerform button{
+    border-radius: 10%;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    height: 50px;
+    width: 100px;
+    align-self: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: medium;
+}

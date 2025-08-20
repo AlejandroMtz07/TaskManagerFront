@@ -4,6 +4,7 @@ import Login from "./LoginComponent/Login";
 import Navbar from "./NavbarComponent/Navbar";
 import { Presentation } from "./PresentationComponent/Presentation";
 import { BrowserRouter,Route,Routes } from "react-router-dom";
+import Register from "./RegisterComponent/Register";
 
 
 export default function App() {
@@ -21,7 +22,9 @@ export default function App() {
           }
         />
         <Route path="login" element={<Login/>}/>
+        <Route path="register" element={<Register/>}/>
       </Routes>
     </BrowserRouter>
   )
 }
+
