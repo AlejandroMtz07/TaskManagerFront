@@ -41,3 +41,13 @@
     font-family: 'Courier New', Courier, monospace;
     font-size: medium;
 }
+.errormessage{
+    background-color: rgb(203, 103, 103);
+    color: white;
+    padding: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: 10px;
+    margin-left: 20%;
+    margin-right: 20%;
+    border-radius: 5px;
+}
