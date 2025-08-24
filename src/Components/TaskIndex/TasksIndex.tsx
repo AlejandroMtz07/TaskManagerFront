@@ -4,6 +4,7 @@ import style from './TaskIndex.module.css'
 import { useEffect, useState } from "react";
 import Task from "./Task/Task";
 import { useAuth } from "../../AuthContext/AuthContext";
+import Footer from "../FooterComponent/Footer";
 
 interface Task {
     id: number
@@ -55,9 +56,7 @@ export default function TasksIndex() {
                         </div>
                     )
             }
-            <footer>
-                About us
-            </footer>
+            <Footer/>
         </div>
     )
 }

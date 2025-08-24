@@ -15,4 +15,6 @@ footer{
     width: 100%;
     padding: 20px;
     background-color: darkcyan;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
 }
