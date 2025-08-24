@@ -16,3 +16,7 @@
     background-color: seagreen;
     font-family: 'Courier New', Courier, monospace;
 }
+select option{
+    background-color: seagreen;
+    border-radius: 10px;
+}
