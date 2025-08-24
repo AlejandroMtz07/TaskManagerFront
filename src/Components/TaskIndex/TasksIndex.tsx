@@ -55,6 +55,9 @@ export default function TasksIndex() {
                         </div>
                     )
             }
+            <footer>
+                About us
+            </footer>
         </div>
     )
 }

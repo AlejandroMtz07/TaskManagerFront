@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding: 20px;
+    padding: 200px;
     background-color: lightgray;
     gap: 20px;
     border-radius: 10px;
