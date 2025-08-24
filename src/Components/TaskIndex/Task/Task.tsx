@@ -11,7 +11,7 @@ export default function Task({ id, taskname, taskcontent, taskstate }: TaskProps
 
     return (
         <div className={style.taskcontainer}>
-            <h3>{taskname}</h3>
+            <h3>{id}. {taskname}</h3>
             <p>{taskcontent}</p>
             <p>{taskstate}</p>
         </div>

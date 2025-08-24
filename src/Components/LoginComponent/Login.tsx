@@ -4,6 +4,7 @@ import { useState, type ChangeEvent, type FormEvent } from 'react';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../AuthContext/AuthContext';
 
 
 export default function Login() {
@@ -17,6 +18,7 @@ export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
+  const{setIsLoged} = useAuth();
 
   const submitForm = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -29,6 +31,7 @@ export default function Login() {
       {withCredentials : true}
     )
     .then((response) => {
+      setIsLoged(true);
       toast.info(response.data.msg)
       setTimeout(()=>{
         navigate('/tasks')

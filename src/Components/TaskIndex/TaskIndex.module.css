@@ -7,3 +7,11 @@
     gap: 20px;
     border-radius: 10px;
 }
+.loginmessage{
+    background-color: lightgray;
+    text-align: center;
+    padding: 50px;
+    margin: 10%;
+    font-family: 'Courier New', Courier, monospace;
+    text-transform: uppercase;
+}
