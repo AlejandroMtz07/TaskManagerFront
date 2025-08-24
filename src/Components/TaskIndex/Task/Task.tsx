@@ -1,3 +1,4 @@
+import Buttons from '../TaskButtons/Buttons';
 import style from './Task.module.css'
 
 interface TaskProps {
@@ -14,6 +15,7 @@ export default function Task({ id, taskname, taskcontent, taskstate }: TaskProps
             <h3>{id}. {taskname}</h3>
             <p>{taskcontent}</p>
             <p>{taskstate}</p>
+            <Buttons id={id} state={['Done','Postponed','Pending']}/>
         </div>
     )
 }
