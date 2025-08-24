@@ -1,0 +1,13 @@
+.taskcontainer{
+    padding: 5%;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+.taskcontainer h3{
+    text-transform: uppercase;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.taskcontainer p{
+    margin-bottom: 10px;
+}

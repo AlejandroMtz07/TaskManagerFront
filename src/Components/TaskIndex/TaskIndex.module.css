@@ -1,0 +1,9 @@
+.taskscontainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 20px;
+    background-color: lightgray;
+    gap: 20px;
+    border-radius: 10px;
+}

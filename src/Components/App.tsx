@@ -5,6 +5,7 @@ import Navbar from "./NavbarComponent/Navbar";
 import { Presentation } from "./PresentationComponent/Presentation";
 import { BrowserRouter,Route,Routes } from "react-router-dom";
 import Register from "./RegisterComponent/Register";
+import TasksIndex from "./TaskIndex/TasksIndex";
 
 
 export default function App() {
@@ -23,6 +24,7 @@ export default function App() {
         />
         <Route path="login" element={<Login/>}/>
         <Route path="register" element={<Register/>}/>
+        <Route path="tasks" element={<TasksIndex/>}/>
       </Routes>
     </BrowserRouter>
   )

@@ -3,6 +3,7 @@ import { Presentation } from "../PresentationComponent/Presentation";
 import { useState, type ChangeEvent, type FormEvent } from 'react';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 
 export default function Login() {
@@ -15,6 +16,7 @@ export default function Login() {
   //Gettting the form values
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
   const submitForm = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -28,6 +30,9 @@ export default function Login() {
     )
     .then((response) => {
       toast.info(response.data.msg)
+      setTimeout(()=>{
+        navigate('/tasks')
+      },2000)
     })
     .catch((error)=>{
       if(Array.isArray(error.response.data)){
