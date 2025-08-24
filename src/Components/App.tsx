@@ -16,7 +16,7 @@ export default function App() {
             element={
               <>
                 <Presentation title="Task Manager App" />
-                <Navbar />
+                <Navbar links={['login','register','tasks']} linkname={['Login','Register','Tasks']}/>
                 <Description />
                 <Benefits />
               </>

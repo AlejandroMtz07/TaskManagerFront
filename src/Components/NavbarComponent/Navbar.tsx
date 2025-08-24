@@ -1,11 +1,20 @@
+
 import style from './Navbar.module.css'
 
-export default function Navbar() {
+
+interface NavBarProps{
+  links: string[];
+  linkname: string[];
+}
+
+export default function Navbar({links,linkname}:NavBarProps) {
   return (
     <div className={style.navbar}>
-        <a href="login">Login</a>
-        <a href="register">Register</a>
-        <a href="#">About us</a>
+        {
+          links.map((link,index)=>(
+            <a href={`/${link}`} key={index}>{linkname[index]}</a>
+          ))
+        }
     </div>
   )
 }
