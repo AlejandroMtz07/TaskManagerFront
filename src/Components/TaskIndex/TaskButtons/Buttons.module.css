@@ -4,7 +4,7 @@
 .buttonscontainer button{
     border-radius: 10px;
     padding: 10px;
-    background-color: lightcoral;
+    background-color: darkorange;
     border-color: transparent;
     color: black;
     margin-right: 10px;
@@ -13,6 +13,6 @@
 .buttonscontainer select{
     padding: 10px;
     border-radius: 10px;
-    background-color: lightseagreen;
+    background-color: seagreen;
     font-family: 'Courier New', Courier, monospace;
 }

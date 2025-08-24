@@ -8,7 +8,7 @@ interface ButtonsProps {
 export default function Buttons({ id, state }: ButtonsProps) {
 
     const handleDelete = () => {
-
+        console.log(id);
     }
 
     return (
@@ -19,7 +19,7 @@ export default function Buttons({ id, state }: ButtonsProps) {
             <select>
                 {
                     state.map((option, index) =>
-                        (<option>{option}</option>))
+                        (<option key={index}>{option}</option>))
                 }
             </select>
         </div>
