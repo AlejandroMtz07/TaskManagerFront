@@ -6,6 +6,7 @@ import { Presentation } from "./PresentationComponent/Presentation";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Register from "./RegisterComponent/Register";
 import TasksIndex from "./TaskIndex/TasksIndex";
+import Logout from "./Logout/Logout";
 
 
 export default function App() {
@@ -25,6 +26,7 @@ export default function App() {
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
           <Route path="tasks" element={<TasksIndex />} />
+          <Route path="logout" element={<Logout/>} />
         </Routes>
     </BrowserRouter>
   )

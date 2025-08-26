@@ -1,0 +1,14 @@
+.message{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-large;
+    text-transform: uppercase;
+    position: fixed;
+    width: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 100px;
+    border-radius: 10px;
+}

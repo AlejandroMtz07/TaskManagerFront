@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import Task from "./Task/Task";
 import { useAuth } from "../../AuthContext/AuthContext";
 import Footer from "../FooterComponent/Footer";
+import Navbar from "../NavbarComponent/Navbar";
+import { Navigate } from "react-router-dom";
 
 interface Task {
     id: number
@@ -34,6 +36,7 @@ export default function TasksIndex() {
     return (
         <div>
             <Presentation title="Here, !Your tasks!" />
+            <Navbar linkname={['Home','Logout']} links={['','logout']}/>
             {
                 //Checking if the user is loged
                 isLoged ?
