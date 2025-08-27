@@ -1,5 +1,5 @@
-import Benefits from "./BenefitsComponent/Benefits";
-import Description from "./DescriptionComponent/Description";
+import Benefits from "./Index/BenefitsComponent/Benefits";
+import Description from "./Index/DescriptionComponent/Description";
 import Login from "./LoginComponent/Login";
 import Navbar from "./NavbarComponent/Navbar";
 import { Presentation } from "./PresentationComponent/Presentation";
