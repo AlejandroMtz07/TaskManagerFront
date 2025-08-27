@@ -5,6 +5,8 @@
     text-align: center;
     display: flex;
     justify-content: space-evenly;
+    min-width: 400px;
+    width: 100%;
 }
 .navbar a{
     width: 33%;

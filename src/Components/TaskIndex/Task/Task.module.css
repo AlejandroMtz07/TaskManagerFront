@@ -1,9 +1,36 @@
 .taskcontainer{
-    padding: 2%;
+    padding: 3%;
     font-family: 'Courier New', Courier, monospace;
     text-align: center;
     border-radius: 10px;
     margin: 10px;
+}
+.done {
+    background-color: darkcyan;
+}
+.done h3{
+    background-color: darkcyan;
+}
+.done p{
+    background-color: darkcyan;
+}
+.postponed{
+    background-color: rgb(46, 75, 119);
+}
+.postponed h3{
+    background-color: rgb(46, 75, 119);
+}
+.postponed p{
+    background-color: rgb(46, 75, 119);
+}
+.pending{
+    background-color: rgb(195, 114, 33);
+}
+.pending h3{
+    background-color: rgb(195, 114, 33);
+}
+.pending p{
+    background-color: rgb(195, 114, 33);
 }
 .taskcontainer h3{
     text-transform: uppercase;

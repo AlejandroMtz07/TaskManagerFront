@@ -26,9 +26,9 @@ export default function Buttons({ id, state }: ButtonsProps) {
     }
 
     return (
-        <div className={style.buttonscontainer}>
+        <>
             <ToastContainer autoClose={1000}/>
-            <button onClick={handleDelete}>
+            <button onClick={handleDelete} className={`${style.button}`}>
                 Delete
             </button>
             <select>
@@ -37,6 +37,6 @@ export default function Buttons({ id, state }: ButtonsProps) {
                         (<option key={index}>{option}</option>))
                 }
             </select>
-        </div>
+        </>
     )
 }
