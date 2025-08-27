@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Register from "./RegisterComponent/Register";
 import TasksIndex from "./TaskIndex/TasksIndex";
 import Logout from "./Logout/Logout";
+import NewTaskForm from "./TaskIndex/NewTaskForm/NewTaskForm";
 
 
 export default function App() {
@@ -27,6 +28,7 @@ export default function App() {
           <Route path="register" element={<Register />} />
           <Route path="tasks" element={<TasksIndex />} />
           <Route path="logout" element={<Logout/>} />
+          <Route path="newtask" element={<NewTaskForm/>} />
         </Routes>
     </BrowserRouter>
   )

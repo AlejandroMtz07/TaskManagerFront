@@ -35,7 +35,7 @@ export default function TasksIndex() {
     return (
         <div>
             <Presentation title="Here, !Your tasks!" />
-            <Navbar linkname={['Home','New Task','Logout']} links={['','#','logout']}/>
+            <Navbar linkname={['Home','New Task','Logout']} links={['','newtask','logout']}/>
             {
                 //Checking if the user is loged
                 isLoged ?
