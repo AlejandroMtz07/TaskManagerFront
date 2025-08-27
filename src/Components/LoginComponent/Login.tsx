@@ -1,11 +1,19 @@
 import style from './Login.module.css'
 import { Presentation } from "../PresentationComponent/Presentation";
-import { useState, type ChangeEvent, type FormEvent } from 'react';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../AuthContext/AuthContext';
+import z, { email, string } from 'zod';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
 
+const LoginSchema = z.object({
+  email: email(),
+  password: string().min(1,'The password can\'t be empty')
+})
+
+export type LoginData = z.infer<typeof LoginSchema>;
 
 export default function Login() {
 
@@ -13,20 +21,20 @@ export default function Login() {
     msg: string;
   }
 
-
-  //Gettting the form values
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
   const navigate = useNavigate();
   const{setIsLoged} = useAuth();
 
-  const submitForm = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  //Import things from the useForm hook
+    const { register, handleSubmit, formState: { errors } } = useForm<LoginData>({
+      resolver: zodResolver(LoginSchema)
+    });
+
+  const onSubmit = (data: LoginData) => {
     axios.post(
       'http://localhost:3000/api/login',
       { 
-        email:email,
-        password:password
+        email:data.email,
+        password:data.password
       },
       {withCredentials : true}
     )
@@ -34,7 +42,7 @@ export default function Login() {
       setIsLoged(true);
       toast.info(response.data.msg)
       setTimeout(()=>{
-        navigate('/tasks')
+        navigate('/tasks');
       },2000)
     })
     .catch((error)=>{
@@ -54,23 +62,25 @@ export default function Login() {
       <Presentation title="Login" />
       <ToastContainer hideProgressBar={false}/>
       <div className={style.formcontainer}>
-        <form className={style.loginform} onSubmit={submitForm}>
+        <form className={style.loginform} onSubmit={handleSubmit(onSubmit)}>
           <label htmlFor="name">
             Email
           </label>
           <input
             type="email"
             placeholder='Email'
-            onChange={(e: ChangeEvent<HTMLInputElement>) => { setEmail(e.target.value) }}
+            {...register('email',{required: true})}
           />
+          {errors && (<p className={style.errormessage}>Add your email</p>)}
           <label htmlFor="password">
             Password
           </label>
           <input
             type="password"
             placeholder='Password'
-            onChange={(e: ChangeEvent<HTMLInputElement>) => { setPassword(e.target.value) }}
+            {...register('password',{required: true})}
           />
+          {errors && (<p className={style.errormessage}>Add your password</p>)}
           <button type='submit'>
             Login
           </button>
