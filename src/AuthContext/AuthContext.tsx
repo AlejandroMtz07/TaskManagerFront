@@ -17,12 +17,8 @@ export const AuthProvider = ({children}:{children:ReactNode})=>{
         axios.get(
             'http://localhost:3000/api/tasks',
             {withCredentials:true}
-        ).then((res)=>{
-            if(res.statusText === 'OK'){
-                setIsLoged(true);
-            }else{
-                setIsLoged(false);
-            }
+        ).then(()=>{
+            setIsLoged(true);
         }).catch(()=>{
             setIsLoged(false);
         })

@@ -6,7 +6,7 @@ import Task from "./Task/Task";
 import { useAuth } from "../../AuthContext/AuthContext";
 import Footer from "../FooterComponent/Footer";
 import Navbar from "../NavbarComponent/Navbar";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 interface Task {
     id: number
@@ -53,8 +53,9 @@ export default function TasksIndex() {
                             />
                         ))}
                     </div>
-                    ) : (<Navigate to={'/login'}/>)
+                    ):(<Navigate to={'/login'}/>)
             }
+            
             <Footer/>
         </div>
     )
