@@ -26,7 +26,8 @@ export default function Login() {
 
   //Import things from the useForm hook
     const { register, handleSubmit, formState: { errors } } = useForm<LoginData>({
-      resolver: zodResolver(LoginSchema)
+      resolver: zodResolver(LoginSchema),
+      mode: 'onBlur',
     });
 
   const onSubmit = (data: LoginData) => {
@@ -71,7 +72,7 @@ export default function Login() {
             placeholder='Email'
             {...register('email',{required: true})}
           />
-          {errors && (<p className={style.errormessage}>Add your email</p>)}
+          {errors.email && (<p className={style.errormessage}>Add your email</p>)}
           <label htmlFor="password">
             Password
           </label>
@@ -80,7 +81,7 @@ export default function Login() {
             placeholder='Password'
             {...register('password',{required: true})}
           />
-          {errors && (<p className={style.errormessage}>Add your password</p>)}
+          {errors.password && (<p className={style.errormessage}>Add your password</p>)}
           <button type='submit'>
             Login
           </button>

@@ -36,7 +36,8 @@ export default function Register() {
 
   //Import things from the useForm hook
   const { register, handleSubmit, formState: { errors }, reset } = useForm<FormData>({
-    resolver: zodResolver(FormSchema)
+    resolver: zodResolver(FormSchema),
+    mode: 'onBlur'
   });
   const navigate = useNavigate();
 
