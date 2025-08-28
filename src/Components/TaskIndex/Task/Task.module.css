@@ -6,6 +6,10 @@
     box-shadow: 10px 10px darkgrey;
     min-width: 150px;
     max-width: 80%;
+    transition: all 1s ease;
+}
+.taskcontainer:hover{
+    transform: scale(1.09);
 }
 .done {
     background-color: darkcyan;
