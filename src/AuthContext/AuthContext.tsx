@@ -5,6 +5,7 @@ import { createContext, useContext, useState, type ReactNode, useEffect } from "
 interface AutContextType {
     isLoged: boolean;
     setIsLoged: (value: boolean)=>void;
+    logout: ()=>void;
 }
 
 //Create the context and his initial value as undefined
@@ -12,7 +13,22 @@ const AuthContext = createContext<AutContextType|undefined>(undefined);
 
 export const AuthProvider = ({children}:{children:ReactNode})=>{
 
-    const [isLoged, setIsLoged] = useState(false);
+    const [isLoged, setIsLogedState] = useState<boolean>(()=>{
+        const stored = localStorage.getItem('isLoged');
+        return stored === 'true';
+    });
+
+    const setIsLoged = (value:boolean)=>{
+        setIsLogedState(value);
+        localStorage.setItem('isLoged',String(value));
+    }
+
+    const logout = ()=>{
+        setIsLoged(false);
+        localStorage.removeItem('isLoged');
+        axios.post("http://localhost:3000/api/logout", {}, { withCredentials: true }).catch(() => {});
+    }
+
     useEffect(()=>{
         axios.get(
             'http://localhost:3000/api/tasks',
@@ -24,7 +40,7 @@ export const AuthProvider = ({children}:{children:ReactNode})=>{
         })
     },[])
     return(
-        <AuthContext.Provider value={{isLoged,setIsLoged}}>
+        <AuthContext.Provider value={{isLoged,setIsLoged,logout}}>
             {children}
         </AuthContext.Provider>
     )

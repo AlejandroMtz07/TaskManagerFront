@@ -18,6 +18,7 @@ export default function Logout() {
             setTimeout(()=>{
                 setIsLoged(false);
                 localStorage.removeItem('token');
+                localStorage.removeItem('isLoged');
                 navigate('/login');
             },2000);
         }).catch(()=>{
