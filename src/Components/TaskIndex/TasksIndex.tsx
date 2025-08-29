@@ -36,27 +36,31 @@ export default function TasksIndex() {
     return (
         <div>
             <Presentation title="Here, !Your tasks!" />
-            <Navbar linkname={['Home','New Task','Logout']} links={['','newtask','logout']}/>
+            <Navbar linkname={['Home', 'New Task', 'Logout']} links={['', 'newtask', 'logout']} />
             {
                 //Checking if the user is loged
-                isLoged ?
-                    (<div className={style.taskscontainer}>
-                        {tasks.map((task, index) =>
-                        (
-                            //Generating the user tasks
-                            <Task
-                                key={index}
-                                id={task.id}
-                                taskname={task.taskname}
-                                taskcontent={task.taskcontent}
-                                taskstate={task.taskstate}
-                            />
-                        ))}
-                    </div>
-                    ):(<Navigate to={'/login'}/>)
+                (tasks.length === 0) ?
+                    <div className={style.loginmessage}>Add Tasks</div> :
+                    isLoged ?
+                        (<div className={style.taskscontainer}>
+                            {
+                                tasks.map((task, index) =>
+                                (
+                                    //Generating the user tasks
+                                    <Task
+                                        key={index}
+                                        id={task.id}
+                                        taskname={task.taskname}
+                                        taskcontent={task.taskcontent}
+                                        taskstate={task.taskstate}
+                                    />
+                                ))
+                            }
+                        </div>
+                        ) : (<Navigate to={'/login'} />)
             }
-            
-            <Footer/>
+
+            <Footer />
         </div>
     )
 }
