@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { toast, ToastContainer } from 'react-toastify';
 
 const TaskSchema = z.object({
   taskname: string().min(4,'Name can\'t be empty'),
@@ -32,9 +33,13 @@ export default function NewTaskForm() {
       },
       {withCredentials: true}
     ).then((response)=>{
-      console.log(response);
+      toast(response.data.msg);
+      setTimeout(()=>{
+        navigate('/tasks');
+      },1500)
     }).catch((error)=>{
-      console.log(error);
+      toast(error.data.msg);
+      reset();
     })
   }
 
@@ -42,12 +47,13 @@ export default function NewTaskForm() {
     <div className={style.newtaskcontainer}>
       <Presentation title='Add new task'/>
       <div className={style.formcontainer}>
+        <ToastContainer />
         <form className={style.taskform} onSubmit={handleSubmit(onSubmit)}>
           <label>Task name</label>
-          <input type="text" {...register('taskname')}/>
+          <input type="text" {...register('taskname')} autoComplete='off'/>
           {errors.taskname && (<p className={style.errormessage}>Add a task name</p>)}
           <label>Task content</label>
-          <input type="text" {...register('taskcontent')}/>
+          <input type="text" {...register('taskcontent')} autoComplete='off'/>
           {errors.taskcontent && (<p className={style.errormessage}>Add a task content</p>)}
           <label>Task state</label>
           <select {...register('taskstate',{required: true})}>

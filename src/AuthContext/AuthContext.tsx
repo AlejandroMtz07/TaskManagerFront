@@ -25,7 +25,6 @@ export const AuthProvider = ({children}:{children:ReactNode})=>{
 
     const logout = ()=>{
         setIsLoged(false);
-        localStorage.removeItem('isLoged');
         axios.post("http://localhost:3000/api/logout", {}, { withCredentials: true }).catch(() => {});
     }
 
