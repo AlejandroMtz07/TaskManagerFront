@@ -28,7 +28,7 @@ export default function Task({ id, taskname, taskcontent, taskstate }: TaskProps
             <h3>{taskname}</h3>
             <p>{taskcontent}</p>
             <p>{taskstate}</p>
-            <Buttons id={id} state={['Done','Postponed','Pending']}/>
+            <Buttons id={id} taskname={taskname} taskcontent={taskcontent} state={['Done','Postponed','Pending']} actualstate={taskstate}/>
         </div>
     )
 }
