@@ -43,6 +43,7 @@ export default function Buttons({ id,taskname,taskcontent, state, actualstate }:
             { withCredentials: true }
         ).then((response)=>{
             toast.success(response.data.msg);
+            setTimeout(()=>navigate(0),2000);
         }).catch((error)=>{
             toast.error(error.data.msg);
         })
